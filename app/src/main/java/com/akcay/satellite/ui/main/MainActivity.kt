@@ -1,4 +1,4 @@
-package com.akcay.satellite.ui
+package com.akcay.satellite.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

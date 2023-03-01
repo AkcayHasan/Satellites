@@ -11,7 +11,7 @@ object Versions {
      * Dependency Versions
      */
     const val kotlinVersion = "1.5.21"
-    const val kotlinPluginVersion = "1.8.10"
+    const val kotlinPluginVersion = "1.6.10"
     const val gradleVersion = "7.4.1"
     const val ktxVersion = "1.6.0"
     const val constraintLayoutVersion = "2.1.2"
@@ -22,7 +22,7 @@ object Versions {
     const val gsonVersion = "2.9.0"
     const val moshiVersion = "1.11.0"
     const val moshiRetrofitVersion = "2.9.0"
-    const val navigationVersion = "2.3.5"
+    const val navigationVersion = "2.5.3"
     const val coroutineVersion = "1.5.2"
     const val coroutineLifecycleVersion = "2.4.0"
     const val lottie_version = "3.4.0"
