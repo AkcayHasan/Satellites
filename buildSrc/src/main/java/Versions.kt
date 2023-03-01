@@ -5,13 +5,13 @@ object Versions {
     const val androidMinSdkVersion = 21
     const val androidTargetSdkVersion = 33
     const val androidCompileSdkVersion = 33
-    const val buildToolsVersion = "30.0.3"
+    const val buildToolsVersion = "33.0.1"
 
     /**
      * Dependency Versions
      */
     const val kotlinVersion = "1.5.21"
-    const val kotlinPluginVersion = "1.6.10"
+    const val kotlinPluginVersion = "1.8.10"
     const val gradleVersion = "7.4.1"
     const val ktxVersion = "1.6.0"
     const val constraintLayoutVersion = "2.1.2"
