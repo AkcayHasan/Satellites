@@ -1,23 +1,15 @@
 package com.akcay.satellite.util
 
-data class Resource<out T>(val status: Status, val data: T?, val message: String?) {
-    companion object {
-        fun <T> success(data: T?): Resource<T> {
-            return Resource(Status.SUCCESS, data, null)
-        }
-
-        fun <T> error(msg: String, data: T?): Resource<T> {
-            return Resource(Status.ERROR, data, msg)
-        }
-
-        fun <T> loading(data: T?): Resource<T> {
-            return Resource(Status.LOADING, data, null)
-        }
-    }
+sealed class Resource<out T> {
+    data class Success<out T>(val data: T?) : Resource<T>()
+    data class Error(val exception: Exception) : Resource<Nothing>()
+    object Loading : Resource<Nothing>()
 }
 
-enum class Status {
-    SUCCESS,
-    ERROR,
-    LOADING
+fun <T, R> Resource<T>.map(action: (T?) -> R?): Resource<R> {
+    return when(this) {
+        is Resource.Success -> Resource.Success(action.invoke(data))
+        is Resource.Loading -> Resource.Loading
+        is Resource.Error -> Resource.Error(exception)
+    }
 }

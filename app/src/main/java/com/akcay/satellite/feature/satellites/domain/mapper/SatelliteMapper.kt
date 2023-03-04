@@ -1,11 +1,11 @@
 package com.akcay.satellite.feature.satellites.domain.mapper
 
 import com.akcay.satellite.feature.satellites.data.entities.SatelliteDetailResponse
-import com.akcay.satellite.feature.satellites.data.entities.SatellitesListResponse
+import com.akcay.satellite.feature.satellites.data.entities.SatelliteListResponse
 import com.akcay.satellite.feature.satellites.domain.entities.SatelliteDetailModel
-import com.akcay.satellite.feature.satellites.domain.entities.SatellitesListModel
+import com.akcay.satellite.feature.satellites.domain.entities.SatelliteListModel
 
-fun SatellitesListResponse.toSatellitesListModel() = SatellitesListModel(
+fun SatelliteListResponse.toSatellitesListModel() = SatelliteListModel(
     id, active, name
 )
 

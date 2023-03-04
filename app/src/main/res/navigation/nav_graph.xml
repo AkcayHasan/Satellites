@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/satellitesListFragment"
-        android:name="com.akcay.satellite.ui.satellitesList.SatellitesListFragment"
+        android:name="com.akcay.satellite.ui.satellitesList.SatelliteListFragment"
         android:label="fragment_satellites_list"
-        tools:layout="@layout/fragment_satellites_list" >
+        tools:layout="@layout/fragment_satellite_list" >
         <action
             android:id="@+id/action_satellitesListFragment_to_satelliteDetailFragment"
             app:destination="@id/satelliteDetailFragment" />

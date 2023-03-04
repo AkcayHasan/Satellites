@@ -4,7 +4,6 @@
     android:id="@+id/llMainItem"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginVertical="@dimen/satellites_list_margin_vertical"
     android:gravity="center"
     android:orientation="horizontal"
     android:weightSum="2">

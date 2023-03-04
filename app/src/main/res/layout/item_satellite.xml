@@ -6,6 +6,7 @@
     <com.akcay.satellite.components.SatelliteItemView
         android:id="@+id/rowSatellite"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_marginVertical="@dimen/satellites_list_margin_vertical" />
 
 </FrameLayout>
