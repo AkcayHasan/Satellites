@@ -30,8 +30,13 @@ abstract class BaseFragment<VB : ViewBinding, VM : ViewModel>(
         _binding = bindingInflater.invoke(inflater)
         if (_binding == null)
             throw IllegalArgumentException("Binding can not be null!")
+        initializeUi()
+        observeViewModel()
         return binding.root
     }
+
+    abstract fun initializeUi()
+    abstract fun observeViewModel()
 
     fun showLoadingBar() {
         (this.activity as MainActivity).showLoadingBar()

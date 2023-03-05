@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.satellitesList.SatelliteListFragment">
+    android:background="@color/passive_gray"
+    android:orientation="vertical"
+    tools:context=".ui.satellitelist.SatelliteListFragment">
+
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/search_view_margin"
+        android:background="@drawable/bg_search"
+        android:iconifiedByDefault="false"
+        android:queryBackground="@null"
+        android:queryHint="@string/text_view_search" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvSatellitesList"
@@ -11,4 +23,4 @@
         android:layout_height="match_parent"
         android:padding="@dimen/satellites_list_padding" />
 
-</FrameLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -5,4 +5,6 @@
 
     <dimen name="satellites_list_padding">20dp</dimen>
     <dimen name="satellites_list_margin_vertical">5dp</dimen>
+
+    <dimen name="search_view_margin">10dp</dimen>
 </resources>

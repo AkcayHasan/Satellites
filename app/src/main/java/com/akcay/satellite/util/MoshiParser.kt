@@ -5,7 +5,7 @@ import com.squareup.moshi.Moshi
 import java.lang.reflect.Type
 import javax.inject.Inject
 
-class MoshiParser @Inject constructor(private val moshi: Moshi) {
+class MoshiParser(private val moshi: Moshi) {
 
     fun <T> fromJson(json: String, type: Type): T? {
 

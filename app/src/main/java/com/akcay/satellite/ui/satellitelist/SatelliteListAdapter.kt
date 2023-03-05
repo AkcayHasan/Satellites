@@ -1,4 +1,4 @@
-package com.akcay.satellite.ui.satellitesList
+package com.akcay.satellite.ui.satellitelist
 
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
@@ -65,12 +65,12 @@ class SatelliteListAdapter : RecyclerView.Adapter<SatelliteListAdapter.Satellite
                     )
                 }
                 setSatelliteNameText(satelliteItem.name)
-                onClickListener = { clickListener.invoke(satelliteItem.id) }
+                onClickListener = { clickListener.invoke(satelliteItem.name, satelliteItem.id) }
             }
         }
     }
 
-    var clickListener: (id: Int) -> Unit = {}
+    var clickListener: (name: String, id: Int) -> Unit = { _, _ -> }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SatelliteViewHolder {
         val view = ItemSatelliteBinding.inflate(LayoutInflater.from(parent.context), parent, false)

@@ -9,4 +9,8 @@
     <string name="text_view_satellite_height_or_mass">Height/Mass:</string>
     <string name="text_view_satellite_cost">Cost:</string>
     <string name="text_view_satellite_last_position">Last Position:</string>
+    <string name="text_view_search">Search</string>
+
+    <string name="text_view_satellite_last_position_values">(%1$s,%2$s)</string>
+    <string name="text_view_satellite_height_or_mass_values">%1$s/%2$s</string>
 </resources>

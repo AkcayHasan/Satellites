@@ -1,17 +1,14 @@
 package com.akcay.satellite.module
 
-import android.content.Context
 import com.akcay.satellite.feature.satellites.data.repository.SatelliteRepositoryImpl
 import com.akcay.satellite.feature.satellites.data.source.SatelliteLocalDataSource
-import com.akcay.satellite.feature.satellites.data.source.SatelliteRemoteDataSource
+import com.akcay.satellite.feature.satellites.data.source.SatelliteFileDataSource
 import com.akcay.satellite.feature.satellites.domain.repository.SatelliteRepository
-import com.squareup.moshi.JsonAdapter
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
@@ -27,7 +24,7 @@ class SatelliteModule {
     @Provides
     @Singleton
     fun provideSatelliteRepository(
-        remoteDataSource: SatelliteRemoteDataSource,
+        remoteDataSource: SatelliteFileDataSource,
         localDataSource: SatelliteLocalDataSource
     ): SatelliteRepository = SatelliteRepositoryImpl(remoteDataSource, localDataSource)
 

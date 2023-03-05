@@ -7,16 +7,32 @@
 
     <fragment
         android:id="@+id/satellitesListFragment"
-        android:name="com.akcay.satellite.ui.satellitesList.SatelliteListFragment"
+        android:name="com.akcay.satellite.ui.satellitelist.SatelliteListFragment"
         android:label="fragment_satellites_list"
-        tools:layout="@layout/fragment_satellite_list" >
+        tools:layout="@layout/fragment_satellite_list">
         <action
             android:id="@+id/action_satellitesListFragment_to_satelliteDetailFragment"
-            app:destination="@id/satelliteDetailFragment" />
+            app:destination="@id/satelliteDetailFragment">
+            <argument
+                android:name="id"
+                android:defaultValue="0"
+                app:argType="integer" />
+            <argument
+                android:name="name"
+                app:argType="string" />
+        </action>
     </fragment>
     <fragment
         android:id="@+id/satelliteDetailFragment"
-        android:name="com.akcay.satellite.ui.satelliteDetail.SatelliteDetailFragment"
+        android:name="com.akcay.satellite.ui.satellitedetail.SatelliteDetailFragment"
         android:label="fragment_satellite_detail"
-        tools:layout="@layout/fragment_satellite_detail" />
+        tools:layout="@layout/fragment_satellite_detail">
+        <argument
+            android:name="id"
+            android:defaultValue="0"
+            app:argType="integer" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+    </fragment>
 </navigation>

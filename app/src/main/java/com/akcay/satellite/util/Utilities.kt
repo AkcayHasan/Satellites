@@ -5,7 +5,7 @@ import java.io.IOException
 import java.io.InputStream
 import java.nio.charset.Charset
 
-object CommonUtils {
+object Utilities {
 
     fun loadJSONFromAsset(context: Context, fileName: String): String? {
         val json: String? = try {
