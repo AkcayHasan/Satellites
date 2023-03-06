@@ -40,11 +40,4 @@ object Dependencies {
         val coroutinesLifecycleVM by lazy { "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.coroutineLifecycleVersion}" }
         val coroutinesLifecycleRT by lazy { "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.coroutineLifecycleVersion}" }
     }
-
-    /**
-     * Test Libraries
-     */
-    object TestLibraries {
-        const val jUnit = "junit:junit:${Versions.junitVersion}"
-    }
 }

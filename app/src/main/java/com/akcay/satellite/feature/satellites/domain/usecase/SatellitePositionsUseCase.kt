@@ -1,10 +1,7 @@
 package com.akcay.satellite.feature.satellites.domain.usecase
 
 import com.akcay.satellite.base.BaseUseCase
-import com.akcay.satellite.feature.satellites.data.entities.PositionListResponse
-import com.akcay.satellite.feature.satellites.domain.entities.PositionListModel
 import com.akcay.satellite.feature.satellites.domain.entities.PositionsEntityModel
-import com.akcay.satellite.feature.satellites.domain.mapper.toPositions
 import com.akcay.satellite.feature.satellites.domain.mapper.toPositionsEntityModel
 import com.akcay.satellite.feature.satellites.domain.repository.SatelliteRepository
 import com.akcay.satellite.util.Resource

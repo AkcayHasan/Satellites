@@ -1,7 +1,6 @@
 package com.akcay.satellite.base
 
 import com.akcay.satellite.util.Resource
-import com.akcay.satellite.util.map
 import kotlinx.coroutines.flow.flow
 
 open class BaseRepository {

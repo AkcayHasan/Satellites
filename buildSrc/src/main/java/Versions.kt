@@ -29,6 +29,4 @@ object Versions {
     const val hiltViewModelsVersion = "1.0.0-alpha03"
     const val lifecycleExtVersion = "2.2.0"
     const val fragmentExtVersion = "1.3.6"
-
-    const val junitVersion = "4.13.2"
 }

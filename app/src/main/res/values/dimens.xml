@@ -7,4 +7,10 @@
     <dimen name="satellites_list_margin_vertical">5dp</dimen>
 
     <dimen name="search_view_margin">10dp</dimen>
+
+    <dimen name="text_view_satellite_detail_name">18sp</dimen>
+    <dimen name="linear_layout_satellite_detail_info_padding_top">40dp</dimen>
+
+    <dimen name="satellite_detail_info_padding_top">20dp</dimen>
+    <dimen name="search_view_background_radius">20dp</dimen>
 </resources>

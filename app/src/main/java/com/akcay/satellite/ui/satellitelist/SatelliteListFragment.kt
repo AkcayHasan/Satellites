@@ -1,8 +1,5 @@
 package com.akcay.satellite.ui.satellitelist
 
-import android.os.Bundle
-import android.util.Log
-import android.view.View
 import android.widget.SearchView
 import androidx.core.content.res.ResourcesCompat
 import androidx.lifecycle.lifecycleScope
@@ -15,9 +12,6 @@ import com.akcay.satellite.util.DividerItemDecorator
 import com.akcay.satellite.util.Resource
 import com.akcay.satellite.util.map
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class SatelliteListFragment : BaseFragment<FragmentSatelliteListBinding, SatelliteListViewModel>(
@@ -50,13 +44,12 @@ class SatelliteListFragment : BaseFragment<FragmentSatelliteListBinding, Satelli
 
     override fun initializeUi() {
         this.lifecycleScope.launchWhenCreated {
-            viewModel.getAllSatellitesList()
+            viewModel.getRelatedSatelliteList()
         }
         binding.run {
             rvSatellitesList.run {
-                val rvLayoutManager =
+                layoutManager =
                     LinearLayoutManager(binding.root.context, LinearLayoutManager.VERTICAL, false)
-                layoutManager = rvLayoutManager
                 setHasFixedSize(true)
                 ResourcesCompat.getDrawable(resources, R.drawable.divider, null)?.let {
                     addItemDecoration(DividerItemDecorator(it))

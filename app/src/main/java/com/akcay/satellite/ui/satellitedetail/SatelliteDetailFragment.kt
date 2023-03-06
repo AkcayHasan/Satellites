@@ -24,12 +24,6 @@ class SatelliteDetailFragment :
     override fun getViewModelClass(): Class<SatelliteDetailViewModel> =
         SatelliteDetailViewModel::class.java
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-
-    }
-
     override fun initializeUi() {
         this.lifecycleScope.launchWhenCreated {
             viewModel.getSatelliteDetail()

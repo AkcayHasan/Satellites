@@ -21,7 +21,7 @@ class SatelliteFileDataSource @Inject constructor(
         const val SATELLITE_POSITIONS = "positions"
     }
 
-    fun getSatelliteList(): List<SatelliteListResponse>? {
+    fun getSatelliteList(query: String?): List<SatelliteListResponse>? {
         val data = Utilities.loadJSONFromAsset(context, SATELLITES)
         val type: Type = Types.newParameterizedType(
             MutableList::class.java,
@@ -31,7 +31,15 @@ class SatelliteFileDataSource @Inject constructor(
         val adapter: JsonAdapter<List<SatelliteListResponse>> = moshi.adapter(type)
 
         return data?.let {
-            adapter.fromJson(data)
+            query?.let { searchText ->
+                adapter.fromJson(it)?.filter { satelliteListResponse ->
+                    satelliteListResponse.name.lowercase().contains(searchText)
+                }?.apply {
+                    this
+                }
+            } ?: kotlin.run {
+                adapter.fromJson(it)
+            }
         } ?: kotlin.run {
             null
         }
@@ -71,8 +79,6 @@ class SatelliteFileDataSource @Inject constructor(
                     }
                 }
             }
-        } ?: kotlin.run {
-            return null
         }
         return null
     }

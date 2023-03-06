@@ -2,9 +2,7 @@ package com.akcay.satellite.ui.satellitelist
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.viewModelScope
-import com.akcay.satellite.base.None
 import com.akcay.satellite.feature.satellites.domain.entities.SatelliteListModel
 import com.akcay.satellite.feature.satellites.domain.usecase.SatelliteListUseCase
 import com.akcay.satellite.util.Resource
@@ -29,10 +27,10 @@ class SatelliteListViewModel @Inject constructor(
     val satelliteList: StateFlow<Resource<List<SatelliteListModel>>>
         get() = _satelliteList
 
-    fun getAllSatellitesList() {
+    fun getRelatedSatelliteList(query: String? = null) {
         viewModelScope.launch {
             try {
-                satelliteListUseCase.observe(None).collect {
+                satelliteListUseCase.observe(query).collect {
                     _satelliteList.value = it
                 }
             } catch (e: Exception) {
@@ -46,13 +44,7 @@ class SatelliteListViewModel @Inject constructor(
             job?.cancel()
             job = viewModelScope.launch {
                 delay(1000)
-                text?.let {
-                    if (it.isNotBlank()) {
-
-                    } else {
-                        getAllSatellitesList()
-                    }
-                }
+                getRelatedSatelliteList(text)
             }
         }
     }
